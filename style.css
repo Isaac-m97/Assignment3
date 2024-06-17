@@ -1,0 +1,50 @@
+body {
+    background-color: #af26e6; /* Purple background was chosen as i felt purple gives a carnival vibe espically since the theme of this game is popping a balloon. */
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lodge Script', cursive; /* this font was chosen as it looks playful */
+    font-weight: 400;
+    font-style: normal;
+    color: #e5e5cb;
+    font-size: 1.1rem;
+    min-height: 100vh;
+}
+
+#container {      /*used CSS Grid to layout the browser game to how i wanted it to be*/
+    display: grid;
+    grid-template-areas: 
+      'heading'
+      'balloon'
+      'click-count'
+      'timer';
+    gap: 0.5rem; 
+    text-align: center;
+    max-width: 900px;
+}
+
+#balloon {
+    position: relative;
+}
+
+#balloon-img {
+    width: 500px; 
+    transition: transform 0.2s ease-in-out; 
+}
+
+#balloon:hover #balloon-img {
+    transform: scale(1.2); 
+    cursor: pointer; /* ended up also adding a hover effect on the balloon for a cleaner look. I found that it prompts the user to click on the balloon. */
+}
+
+#click-count, #timer {
+    font-size: 1.2rem;
+    margin-top: -10px; 
+    margin-bottom: -10px; 
+}
+
+.game-over {
+    pointer-events: none; /* made sure to make pointer-events none to disable clicking on the balloon after game over */
+}
